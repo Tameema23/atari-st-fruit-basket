@@ -2,8 +2,6 @@
 
 A fully functional double-buffered 2D arcade game built in **C and 68000 Assembly** for real Atari ST hardware. The player controls a basket to catch falling fruit while dodging bombs. Difficulty scales dynamically as time progresses.
 
-Built as part of CPSC 233 at the University of Calgary.
-
 ---
 
 ## Gameplay
