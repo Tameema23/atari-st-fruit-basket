@@ -1,0 +1,38 @@
+game: main.o renderer.o raster.o model.o events.o font.o input.o music.o psg.o effects.o menu.o v_base.o
+	cc68x -g main.o renderer.o raster.o model.o events.o font.o input.o music.o psg.o effects.o menu.o v_base.o -o game
+
+main.o: main.c main.h renderer.h model.h events.h input.h music.h psg.h menu.h
+	cc68x -g -c main.c
+
+renderer.o: renderer.c renderer.h model.h raster.h
+	cc68x -g -c renderer.c
+
+raster.o: raster.c raster.h
+	cc68x -g -c raster.c
+
+model.o: model.c model.h main.h effects.h
+	cc68x -g -c model.c
+
+events.o: events.c events.h model.h effects.h
+	cc68x -g -c events.c
+
+input.o: input.c input.h events.h
+	cc68x -g -c input.c
+
+font.o: font.c font.h
+	cc68x -g -c font.c
+
+psg.o: psg.c psg.h raster.h main.h
+	cc68x -g -c psg.c
+
+music.o: music.c music.h psg.h
+	cc68x -g -c music.c
+
+effects.o: effects.c effects.h psg.h
+	cc68x -g -c effects.c
+
+menu.o: menu.c menu.h raster.h psg.h
+		cc68x -g -c menu.c
+
+v_base.o: v_base.s
+		gen -l2 -d v_base.s
